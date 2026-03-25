@@ -1,23 +1,28 @@
 public class visokosniiGod {
-    public static void main(String[] args) {
-        int year = 2024; // Example year
-        boolean isLeap = false;
-
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if (year % 400 == 0) {
-                    isLeap = true;
+        public static int leapYearCount(int year) {
+            
+            int count = 0;
+            for (int y = 1; y <= year; y++) {
+                if (y % 4 == 0 && (y % 100 != 0 || y % 400 == 0)) {
+                    count++;
                 }
-            } else {
-                isLeap = true;
             }
+            return count;
         }
 
-        if (isLeap) {
-            System.out.println(year + " is a leap year.");
-        } else {
-            System.out.println(year + " is not a leap year.");
+        public static void main(String[] args) {
+            int year = 2024; // Example year
+            int numberOfLeapYears = leapYearCount(year);
+            System.out.println("Number of leap years up to " + year + ": " + numberOfLeapYears);
+
+            year = 1900;
+            numberOfLeapYears = leapYearCount(year);
+            System.out.println("Number of leap years up to " + year + ": " + numberOfLeapYears);
+
+            year = 2000;
+            numberOfLeapYears = leapYearCount(year);
+            System.out.println("Number of leap years up to " + year + ": " + numberOfLeapYears);
         }
     }
 
-}
+
