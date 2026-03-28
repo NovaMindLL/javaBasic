@@ -8,6 +8,7 @@ public class visokosniiGod {
                 }
             }
             return count;
+
         }
 
         public static void main(String[] args) {
